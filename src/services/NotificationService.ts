@@ -1,4 +1,5 @@
 import messaging from '@react-native-firebase/messaging';
+import inAppMessaging from '@react-native-firebase/in-app-messaging';
 import {Platform, Alert} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {requestNotificationPermission} from '../utils/permissions';
@@ -28,6 +29,17 @@ export async function init(): Promise<void> {
       )
       .catch(err =>
         Logger.warn('NotificationService', 'Topic subscription failed', err),
+      );
+
+    // Enable Firebase In-App Messaging so campaigns created in the Firebase
+    // console are displayed to the user automatically
+    await inAppMessaging()
+      .setMessagesDisplaySuppressed(false)
+      .then(() =>
+        Logger.info('NotificationService', 'In-App Messaging enabled'),
+      )
+      .catch(err =>
+        Logger.warn('NotificationService', 'In-App Messaging init failed', err),
       );
 
     // Refresh token listener

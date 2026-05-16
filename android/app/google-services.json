@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "293484567996",
-    "project_id": "eunixma-41029",
-    "storage_bucket": "eunixma-41029.firebasestorage.app"
+    "project_number": "154092006629",
+    "project_id": "eunima-4ce3f",
+    "storage_bucket": "eunima-4ce3f.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:293484567996:android:7aa6a0259b9140bec51fb9",
+        "mobilesdk_app_id": "1:154092006629:android:f616440ba59d4eafa7380c",
         "android_client_info": {
-          "package_name": "com.eunixmawebview"
+          "package_name": "com.eunixma.eunixmaapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBi3fWcv4KBRzGdDa3auNXap2hrUFNqHeo"
+          "current_key": "AIzaSyBOpezGpTs67uWl68ELp9m_M4TUJuAZzQY"
         }
       ],
       "services": {

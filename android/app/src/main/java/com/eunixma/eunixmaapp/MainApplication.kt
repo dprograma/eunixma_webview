@@ -1,4 +1,4 @@
-package com.eunixmawebview
+package com.eunixma.eunixmaapp
 
 import android.app.Application
 import com.facebook.react.PackageList

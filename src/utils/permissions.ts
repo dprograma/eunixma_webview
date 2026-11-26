@@ -29,21 +29,10 @@ export async function requestStoragePermission(): Promise<boolean> {
   }
 
   if (Number(Platform.Version) >= 33) {
-    try {
-      const granted = await PermissionsAndroid.request(
-        PermissionsAndroid.PERMISSIONS.READ_MEDIA_IMAGES,
-        {
-          title: 'Storage Permission',
-          message: 'This app needs access to your photos.',
-          buttonPositive: 'OK',
-          buttonNegative: 'Cancel',
-        },
-      );
-      return granted === PermissionsAndroid.RESULTS.GRANTED;
-    } catch (err) {
-      Logger.error('Permissions', 'Storage permission error', err);
-      return false;
-    }
+    // Android 13+ (API 33+): launchImageLibrary opens the system Photo Picker,
+    // which needs no runtime permission at all. Requesting READ_MEDIA_IMAGES
+    // here would violate Google Play's Photo and Video Permissions policy.
+    return true;
   }
 
   try {
